@@ -1,0 +1,39 @@
+{% extends "blog/index.html" %}
+{% block auth-index %}
+{% load static %}
+<div class="allitems" style="width:100%;  padding: 40px; text-align: center; margin-top:2px;margin-bottom:2px;margin:auto;">
+<header style="background:rgba(0,0,0,0.05);height:10%;">
+  <nav>
+    <a href="{% url 'users-auth'%}" class="btn btn-full"  id="book-button" style="margin-top:50px;">Go-back</a>
+    <a href="{% url 'post-create'%}" class="btn btn-full"  id="book-button" >Create new card</a>
+    <a href="{% url 'post-update' object.id %}" class="btn btn-full"  id="book-button" >Update this card</a>
+    <a href="{% url 'post-delete' object.id %}" class="btn btn-full"  id="book-button" >Delete this card</a>
+  </nav>
+</header>
+
+  <section class="section-plans js--section-plans" id="plans">
+          <div class="row">
+          <div class="col span-1-of-3">
+              <div class="plan-box js--wp-4">
+                  <div>
+                      <h3>{{ places.name }}</h3>
+                      <p class="plan-price">{{ places.price }} <span>{{ places.per }}</span></p>
+                      <br>
+                      </div>
+                  <div>
+                      <ul>
+                          <li><i class="ion-ios-checkmark-empty icon-small"></i>{{ places.adv1 }}</li>
+                          <li><i class="ion-ios-checkmark-empty icon-small"></i>{{ places.adv2 }}</li>
+                          <li><i class="ion-ios-checkmark-empty icon-small"></i>{{ places.adv3 }}</li>
+                          <li><i class="ion-ios-checkmark-empty icon-small"></i>{{ places.adv4 }}</li>
+                      </ul>
+                  </div>
+                  <div >
+                      <a href="{% url 'users-register'%}" class="btn btn-full"  id="book-button" >Book now</a>
+                  </div>
+              </div>
+          </div>
+  </section>
+  </div>
+
+  {% endblock %}

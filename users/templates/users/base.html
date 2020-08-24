@@ -1,0 +1,442 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="shortcut icon" type="image/x-icon" href="{% static "favicon.ico"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendors/css/normalize.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendors/css/grid.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendors/css/ionicons.min.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendors/css/animate.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "resources/css/style.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "resources/css/queries.css"%}">
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+        <title>Travel in colourful india</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="row">
+                    <img src="{% static "resources/img/logo-white.png"%}" alt="Travel logo" class="logo">
+                    <img src="{% static "resources/img/logo.png"%}" alt="Travel logo" class="logo-black">
+                    <ul class="main-nav js--main-nav">
+                        <li><a href="#Expect">Expectations</a></li>
+                        <li><a href="#works">How it works</a></li>
+                        <li><a href="#cities">Centers</a></li>
+                        <li><a href="#plans">Book</a></li>
+                        <li><a href="{% url 'users-login'%}">Login</a></li>
+                    </ul>
+                    <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+                </div>
+            </nav>
+            <div class="hero-text-box">
+                <h1 class="title0" >The journey of a thousand miles,</h1>
+                <h1 class="sub0"> begins with a single step.</h1>
+                <a class="btn btn-full js--scroll-to-plans" href="#">Book now</a>
+                <a class="btn btn-ghost js--scroll-to-start" href="#">Show me more</a>
+            </div>
+
+        </header>
+
+        <section class="section-features js--section-features" id="features">
+            <div class="row">
+                <h2>Not all those who wander are lost.</h2>
+                <p class="long-copy">
+                    Hello, we're Travel.com, your new travel companion. Is there no time for break in your life. You want to travel but have no idea where to go
+                    , we are there for you. So pack your bags. We’re going on vacation! </p>
+            </div>
+
+            <div class="row js--wp-1">
+                <div class="col span-1-of-4 box">
+                    <i class="ion-ios-infinite icon-big"></i>
+                    <h3>Book and Travel on any day</h3>
+                    <p>
+                        Never wait for the right time. Book anytime and make it right. Always avaliable to you with support on our website.
+                    </p>
+                </div>
+                <div class="col span-1-of-4 box">
+                    <i class="ion-ios-people icon-big"></i>
+                    <h3>Connect with people </h3>
+                    <p>
+                    Connect with the people who have common intrests. Meet and greet new faces across India. Learn new cultures and eat good food.
+                    </p>
+                </div>
+                <div class="col span-1-of-4 box">
+                    <i class="ion-ios-paperplane icon-big"></i>
+                    <h3>Choose your transportation</h3>
+                    <p>
+                        Fly , Drive, or Sail across India. Choose a transportation mode and go.Spanning more than 3000km from the cold tips of Himalayas to the soothing touch of waves in Kanyakumari.
+                </div>
+                <div class="col span-1-of-4 box">
+                    <i class="ion-bonfire icon-big"></i>
+                    <h3>Have a good time</h3>
+                    <p>
+                    Loose yourself in enjoyment and finally find yourself in bliss and happiness. Stop worring on the road and enjoy the journey.And finally have a good time!!!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-places" id="Expect">
+            <ul class="places-showcase clearfix">
+                <li>
+                    <figure class="place-photo">
+                        <img src="{% static "resources/img/1.jpg"%}" alt="Image1">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="place-photo">
+                        <img src="{% static "resources/img/2.jpg"%}" alt="Image2">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="place-photo">
+                        <img src="{% static "resources/img/3.jpg"%}" alt="Image3">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="place-photo">
+                        <img src="{% static "resources/img/4.jpg"%}" alt="Image4">
+                    </figure>
+                </li>
+            </ul>
+            <ul class="places-showcase clearfix">
+                <li>
+                    <figure class="place-photo">
+                        <img src="{% static "resources/img/5.jpg"%}" alt="Image5">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="place-photo">
+                        <img src="{% static "resources/img/6.jpg"%}" alt="Image6">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="place-photo">
+                        <img src="{% static "resources/img/7.jpg"%}" alt="Image7">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="place-photo">
+                        <img src="{% static "resources/img/8.jpg"%}" alt="Image8">
+                    </figure>
+                </li>
+            </ul>
+        </section>
+
+
+        <section class="section-steps" id="works">
+            <div class="row">
+                <h2>How it works &mdash; Simple as 1, 2, 3</h2>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-2 steps-box">
+                    <img src="{% static "resources/img/app-iPhone.png"%}" alt="Travel app on iPhone" class="app-screen js--wp-2">
+                </div>
+                <div class="col span-1-of-2 steps-box">
+                    <div class="works-step clearfix">
+                        <div>1</div>
+                        <p>Choose a package or destination on the app and book a package.</p>
+                    </div>
+                    <div class="works-step clearfix">
+                        <div>2</div>
+                        <p>Pack your bags, take your things come to one of our centers.</p>
+                    </div>
+                    <div class="works-step clearfix">
+                        <div>3</div>
+                        <p>Get ready to enjoy your trip!!!!</p>
+                    </div>
+
+                    <a href="https://apps.apple.com/us/app/apple-store/id375380948" class="btn-app"><img src="{% static "resources/img/download-app.svg"%}" alt="App Store Button"></a>
+                    <a href="https://play.google.com/store" class="btn-app"><img src="{% static "resources/img/download-app-android.png"%}" alt="Play Store Button"></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-cities" id="cities">
+            <div class="row">
+                <h2>We're currently in these cities</h2>
+            </div>
+            <div class="row js--wp-3">
+                <div class="col span-1-of-4 box">
+                    <img src="{% static "resources/img/bangalore.jpg"%}" alt="bangalore">
+                    <h3>Bangalore</h3>
+                    <div class="city-feature">
+                        <i class="ion-ios-person icon-small"></i>
+                        30th Cross, Swagath Main Road, Tilak Nagar, Opposite-Usha Apartment, 4th T Block East, Jayanagar, Bengaluru, Karnataka 560041.
+                        <br>
+                        <br>
+                    </div>
+                    <div class="city-feature">
+                        <i class="ion-ios-telephone icon-small"></i>
+                        080-2320 1123
+                    </div>
+                    <div class="city-feature">
+                        <i class="ion-social-twitter icon-small"></i>
+                        <a href="#">@Travel_blr</a>
+                    </div>
+                </div>
+                <div class="col span-1-of-4 box">
+                    <img src="{% static "resources/img/mumbai.jpg"%}" alt="Mumbai">
+                    <h3>Mumbai</h3>
+                    <div class="city-feature">
+                        <i class="ion-ios-person icon-small"></i>
+                       Travel, Gala no 3,4 & 5 Rehab S-1 Grnd Flr Shanti gar SRA CHS Pincal Buil Vodafone Store Andheri East S, Maharashtra 400093.
+                       <br>
+                       <br>
+                       <br>
+                    </div>
+                    <div class="city-feature">
+                        <i class="ion-ios-telephone icon-small"></i>
+                          022-2458 7321
+                    </div>
+                    <div class="city-feature">
+                        <i class="ion-social-twitter icon-small"></i>
+                        <a href="#">@Travel_mum</a>
+                    </div>
+                </div>
+                <div class="col span-1-of-4 box">
+                    <img src="{% static "resources/img/chennai.jpg"%}" alt="Chennai">
+                    <h3>Chennai</h3>
+                    <div class="city-feature">
+                        <i class="ion-ios-person icon-small"></i>
+                        20, Arcot Rd, Taylor Estate, Kodambakkam, Chennai, Tamil Nadu 600024.
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="city-feature">
+                        <i class="ion-ios-telephone icon-small"></i>
+                          044-4212 8919
+                    </div>
+                    <div class="city-feature">
+                        <i class="ion-social-twitter icon-small"></i>
+                        <a href="#">@Travel_che</a>
+                    </div>
+                </div>
+                <div class="col span-1-of-4 box">
+                    <img src="{% static "resources/img/delhi.jpg"%}" alt="Delhi">
+                    <h3>Delhi</h3>
+                    <div class="city-feature">
+                        <i class="ion-ios-person icon-small"></i>
+                        AB-4, Market, near Kamal Cinema, Block A 1, Nauroji Nagar, Safdarjung Enclave, New Delhi, Delhi 110029.
+                        <br>
+                        <br>
+                        <br>
+                    </div>
+                    <div class="city-feature">
+                        <i class="ion-ios-telephone icon-small"></i>
+                          011-2567 4567
+                    </div>
+                    <div class="city-feature">
+                        <i class="ion-social-twitter icon-small"></i>
+                        <a href="#">@Travel_delhi</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="section-testimonials">
+            <div class="row">
+                <h2>Our  regular Travellers</h2>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <blockquote>
+                        Travel is just awesome! I just launched a startup which leaves me with no time for myself. Through travel I realised that time has to be made. Now every time I book in travel I am able to enjoy and go on a relaxing vacation.
+                        <cite><img src="{% static "resources/img/customer-1.jpg"%}">Alberto Duncan</cite>
+                    </blockquote>
+                </div>
+                <div class="col span-1-of-3">
+                    <blockquote>
+                       Inexpensive and beautiful experience, we have lots of fun travelling in India. No one comes even close to Travel in bang for buck packages. Me and my family are so in love!
+                       <br><br><br>
+                        <cite><img src="{% static "resources/img/customer-2.jpg"%}">Joana Silva</cite>
+                    </blockquote>
+                </div>
+                <div class="col span-1-of-3">
+                    <blockquote>
+I was looking for a quick and easy way to see India. I tried a lot of them and ended up with Travel. I had the best experience through out my vacation. Keep up the great work!
+<br><br>
+                    <cite><img src="{% static "resources/img/customer-3.jpg"%}">Milton Chapman</cite>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="section-plans js--section-plans" id="plans">
+            <div class="row">
+                <h2>Pack your bags today today</h2>
+            </div>
+            <div class="row">
+                <div class="col span-1-of-3">
+                    <div class="plan-box js--wp-4">
+                        <div>
+                            <h3>Manali package</h3>
+                            <p class="plan-price">₹25,999 <span>/week</span></p>
+                            <br>
+                            </div>
+                        <div>
+                            <ul>
+                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Victory Resorts Manali</li>
+                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Premium food + Drinks</li>
+                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Mountain treaking</li>
+                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Beas river rafting</li>
+                            </ul>
+                        </div>
+                        <div >
+                            <a href="{% url 'users-register'%}" class="btn btn-full"  id="book-button" >Book now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col span-1-of-3">
+                    <div class="plan-box">
+                        <div>
+                            <h3>Agra-Delhi package</h3>
+                            <p class="plan-price">₹12,999 <span>/ 5days</span></p>
+                            <br>
+                          </div>
+                        <div>
+                            <ul>
+                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Crystal Resorts</li>
+                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Premium food + Drinks</li>
+                                <li><i class="ion-ios-checkmark-empty icon-small"></i>The Taj Mahal</li>
+                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Red Fort</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <a href="{% url 'users-register'%}" class="btn btn-ghost">Book now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col span-1-of-3">
+                    <div class="plan-box">
+                        <div>
+                            <h3>Goa package</h3>
+                            <p class="plan-price">₹8,250<span>/ 5 days</span></p>
+                            <p class="plan-price-meal">&nbsp;</p>
+                        </div>
+                        <div>
+                            <ul>
+                                <li><i class="ion-ios-checkmark-empty icon-small"></i>LaLit Resorts</li>
+                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Premium food + Drinks</li>
+                                <li><i class="ion-ios-close-empty icon-small"></i>Sky diving</li>
+                                <li><i class="ion-ios-checkmark-empty icon-small"></i>Diwar island</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <a href="{% url 'users-register'%}" class="btn btn-ghost">Book now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-form">
+            <div class="row">
+                <h2>We're happy to hear from you</h2>
+            </div>
+            <div class="row">
+                <form method="post" action="#" class="contact-form">
+                  <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="name" id="name" placeholder="Your name" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="email" name="email" id="email" placeholder="Your email" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label for="find-us">How did you find us?</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <select name="find-us" id="find-us">
+                                <option value="friends" selected>Friends</option>
+                                <option value="search">Search engine</option>
+                                <option value="ad">Advertisement</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Newsletter?</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="checkbox" name="news" id="news" checked> Yes, please
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Drop us a line</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <textarea name="message" placeholder="Your message"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>&nbsp;</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="submit" value="Send it!">
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+        </section>
+
+        <footer>
+            <div class="row">
+                <div class="col span-1-of-2">
+                    <ul class="footer-nav">
+                        <li><a href="{% url 'blog-about'%}">About us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="https://apps.apple.com/us/app/apple-store/id375380948">iOS App</a></li>
+                        <li><a href="https://play.google.com/store">Android App</a></li>
+                    </ul>
+                </div>
+                <div class="col span-1-of-2">
+                    <ul class="social-links">
+                        <li><a href="https://www.facebook.com/"><i class="ion-social-facebook"></i></a></li>
+                        <li><a href="https://twitter.com/"><i class="ion-social-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/"><i class="ion-social-linkedin"></i></a></li>
+                        <li><a href="https://www.linkedin.com/"><i class="ion-social-instagram"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <p>
+                    This Website was created for Dbms lab and python lab project using HTML5, CSS, JS, DJANGO AND MONGO.
+                </p>
+                <p>
+                    Built with <i class="ion-ios-heart" style="color: #ea0000; padding: 0 3px;"></i> by Kiran Hegde.
+                </p>
+            </div>
+        </footer>
+{% block users %}{% endblock %}
+    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+    <script type="text/javascript" src="{% static "vendors/js/jquery.waypoints.min.js"%}"></script>
+    <script type="text/javascript" src="{% static "resources/js/script.js"%}"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="{% static "favicon.ico"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendors/css/normalize.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendors/css/grid.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendors/css/ionicons.min.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "vendors/css/animate.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "resources/css/style.css"%}">
+        <link rel="stylesheet" type="text/css" href="{% static "resources/css/queries.css"%}">
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,300italic' rel='stylesheet' type='text/css'>
+        {% if title %}
+        <title>Travel in colourful india - {{ title }}</title>
+        {% else %}
+        <title>Travel in colourful india</title>
+        {% endif %}
+    </head>
+    <body>
+        {% if user.is_authenticated %}
+         {% block auth-index %} {% endblock %}
+         {% block users-forms %}{% endblock %}
+        {% else %}
+         {% block content %} {% endblock %}
+        {% endif %}
+        <script  src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+        <script type="text/javascript" src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+        <script type="text/javascript" src="{% static "vendors/js/jquery.waypoints.min.js"%}"></script>
+        <script type="text/javascript" src="{% static "resources/js/script.js"%}"></script>
+    </body>
+</html>

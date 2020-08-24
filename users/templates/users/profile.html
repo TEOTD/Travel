@@ -1,0 +1,44 @@
+{% extends 'users/base.html' %}
+    {% block users %}
+    {% load static %}
+          {% load crispy_forms_tags %}
+                <div class="popup" id="popup" id="popup_profile">
+                  <div class="popup__contents">
+                    <div class="left">
+                      <div class="media">
+                        <img class="pro_image" src="{{ user.profile.image.url }}">
+                        <div class="media-body">
+                          <h2 class="account-heading">{{ user.username }}</h2>
+                          <p class="text-secondary">{{ user.email }}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="right">
+
+                      <a href="{% url 'users-auth' %}"  class="popup__close">&times;</a>
+                      {% load crispy_forms_tags %}
+                            <div class="content-section">
+                              <form method="POST" enctype="multipart/form-data" id="user-form" class="form-profile">
+                {% csrf_token %}
+                <fieldset class="form-group">
+                    <legend class="border-bottom mb-4">Profile Info</legend>
+                    {{ u_form|crispy }}
+                    {{ p_form|crispy }}
+                </fieldset>
+                                      <div class="form-group">
+                                        <br>
+                                          <a href="#" class="btn btn-full" id="register-button">Update</a>
+                                      </div>
+                                  </form>
+                            </div>
+                    </div>
+                  </div>
+                  </div>
+
+    <script  src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/selectivizr/1.0.3b/selectivizr.min.js"></script>
+    <script type="text/javascript" src="{% static "vendors/js/jquery.waypoints.min.js"%}"></script>
+    <script type="text/javascript" src="{% static "resources/js/script.js"%}"></script>
+{% endblock %}

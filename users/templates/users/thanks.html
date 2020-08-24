@@ -1,0 +1,18 @@
+{% extends 'users/base.html' %}
+    {% block users %}
+    {% load static %}
+            <div class="popup" id="popup">
+            <div class="popup__contents">
+              <div class="left">
+               <img src="{% static "resources/img/1.jpg"%}" alt="Image1">
+              <img src="{% static "resources/img/2.jpg"%}" alt="Image1">
+              </div>
+              <div class="right">
+                <a href="{% url 'users-auth' %}"  class="popup__close">&times;</a>
+                  <h2>Thank you for visiting us</h2>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            </div>
+{% endblock %}

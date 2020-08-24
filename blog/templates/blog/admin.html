@@ -1,0 +1,132 @@
+{% extends "blog/index.html" %}
+{% block auth-index %}
+{% load static %}
+  <header>
+      <nav>
+          <div class="row">
+              <img src="{% static "resources/img/logo-white.png"%}" alt="Travel logo" class="logo">
+              <img src="{% static "resources/img/logo.png"%}" alt="Travel logo" class="logo-black">
+              <ul class="main-nav js--main-nav">
+                <li><a href="/admin">Database</a></li>
+                  <li><a href="#plans">Book</a></li>
+                  <li><a href="{% url 'users-profile'%}">Profile</a></li>
+                  <li><a href="{% url 'users-logout'%}">Logout</a></li>
+              </ul>
+              <a class="mobile-nav-icon js--nav-icon"><i class="ion-navicon-round"></i></a>
+          </div>
+      </nav>
+      <div class="hero-text-box">
+          <h1 class="title0" >Adventure is out there,</h1>
+          <h1 class="sub0"> Go find it</h1>
+          <a class="btn btn-ghost js--scroll-to-plans" href="#">Book now</a>
+          </div>
+</header>
+  <section class="section-plans js--section-plans" id="plans">
+      <div class="row">
+          <h2>Place cards</h2>
+      </div>
+      {% for i in places %}
+      <div class="row">
+          <div class="col span-1-of-3">
+              <div class="plan-box js--wp-4">
+                  <div>
+                      <a href="{% url 'post-detail'  i.id %}"><h3>{{ i.name }}</h3></a>
+                      <p class="plan-price">{{ i.price }} <span>{{ i.per }}</span></p>
+                      <br>
+                      </div>
+                  <div>
+                      <ul>
+                          <li><i class="ion-ios-checkmark-empty icon-small"></i>{{ i.adv1 }}</li>
+                          <li><i class="ion-ios-checkmark-empty icon-small"></i>{{ i.adv2 }}</li>
+                          <li><i class="ion-ios-checkmark-empty icon-small"></i>{{ i.adv3 }}</li>
+                          <li><i class="ion-ios-checkmark-empty icon-small"></i>{{ i.adv4 }}</li>
+                      </ul>
+                  </div>
+                  <div >
+                      <a href="{% url 'users-cards'%}" class="btn btn-full"  id="book-button" >Book now</a>
+                  </div>
+              </div>
+          </div>
+        {% endfor %}
+  </section>
+  <section class="section-plans js--section-plans" id="plans">
+      <div class="row">
+          <h2>User Bookings</h2>
+      </div>
+      {% for i in books %}
+      <div class="row">
+          <div class="col span-1-of-3">
+              <div class="plan-box js--wp-4">
+                  <div>
+                      <h3>{{ i.user }}</h3>
+                      <p class="plan-price">{{ i.place }}</p>
+                      <br>
+                      </div>
+                  <div>
+                      <ul>
+                          <li><i class="ion-ios-checkmark-empty icon-small"></i>{{ i.billno }}</li>
+                          <li><i class="ion-ios-checkmark-empty icon-small"></i>{{ i.name }}</li>
+                          <li><i class="ion-ios-checkmark-empty icon-small"></i>{{ i.phno }}</li>
+                          <li><i class="ion-ios-checkmark-empty icon-small"></i>{{ i.date }}</li>
+                      </ul>
+                  </div>
+                  <div >
+                    
+                    </div>
+              </div>
+          </div>
+        {% endfor %}
+  </section>
+<section>
+  <div class="row">
+      <h2>Visitor Comments</h2>
+  </div>
+{% for i in comm %}
+  <div class="row">
+      <div class="col span-1-of-3">
+          <div class="plan-box js--wp-4">
+              <div>
+                  <h3>{{ i.email }}</h3>
+                  <p class="plan-price">{{ i.name }}</p>
+                  <br>
+                  </div>
+              <div>
+                  <ul>
+                      <li>{{ i.How_Did_You_Find_Us }}</li>
+                      <li>{{ i.Leave_us_a_line }}</li>
+                  </ul>
+              </div>
+              <div >
+                </div>
+          </div>
+      </div>
+    {% endfor %}
+</section>
+
+  <footer>
+      <div class="row">
+          <div class="col span-1-of-2">
+              <ul class="footer-nav">
+                  <li><a href="https://apps.apple.com/us/app/apple-store/id375380948">iOS App</a></li>
+                  <li><a href="https://play.google.com/store">Android App</a></li>
+              </ul>
+          </div>
+          <div class="col span-1-of-2">
+              <ul class="social-links">
+                  <li><a href="https://www.facebook.com/"><i class="ion-social-facebook"></i></a></li>
+                  <li><a href="https://twitter.com/"><i class="ion-social-twitter"></i></a></li>
+                  <li><a href="https://www.instagram.com/"><i class="ion-social-linkedin"></i></a></li>
+                  <li><a href="https://www.linkedin.com/"><i class="ion-social-instagram"></i></a></li>
+              </ul>
+          </div>
+      </div>
+      <div class="row">
+          <p>
+              This Website was created for Dbms lab and python lab project using HTML5, CSS, JS, DJANGO AND MONGO.
+          </p>
+          <p>
+              Built with <i class="ion-ios-heart" style="color: #ea0000; padding: 0 3px;"></i> by Kiran Hegde.
+          </p>
+      </div>
+  </footer>
+{% endblock %}

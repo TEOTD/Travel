@@ -1,0 +1,21 @@
+{% extends 'users/base.html' %}
+    {% block users %}
+    {% load static %}
+      <div class="popup" id="popup" >
+            <div class="popup__contents">
+                  <div class="content-section">
+                      <form method="POST" style="padding:2%; margin:2%;">
+                          {% csrf_token %}
+                          <fieldset class="form-group">
+                              <legend class="border-bottom mb-4">Delete Post</legend>
+                              <h2>Are you sure you want to delete the place "{{ object.name }}"</h2>
+                          </fieldset>
+                          <div class="form-group">
+                              <input class="btn btn-full" type="submit" value="Yes, Delete"></input>
+                              <a class="btn btn-full" href="{% url 'post-detail' object.id %}" style="margin:2%;">Cancel</a>
+                          </div>
+                      </form>
+                  </div>
+            </div>
+            </div>
+{% endblock %}

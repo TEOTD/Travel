@@ -1,0 +1,45 @@
+{% extends 'users/base.html' %}
+    {% block users %}
+    {% load static %}
+      <div class="popup" id="popup">
+            <div class="popup__contents">
+              <div class="left">
+               <img src="{% static "resources/img/1.jpg"%}" alt="Image1">
+              <img src="{% static "resources/img/2.jpg"%}" alt="Image1">
+              </div>
+              <div class="right">
+                <a href=".."  class="popup__close">&times;</a>
+                <div class="content-section">
+                    {% if messages %}
+                        {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">
+                          <p class="message" style="padding-bottom:70%; font-size:30px; text-align:center; "> {{ message }} </p>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                  </div>
+                    {% load crispy_forms_tags %}
+                      <div class="content-section">
+                        <form method="POST" id="user-form">
+                            {% csrf_token %}
+                            <fieldset class="form-group">
+                                <legend class="border-bottom mb-4">Log In</legend>
+                                {{ form|crispy }}
+                            </fieldset>
+                            <div class="form-group">
+                              <br>
+                                <a href="#" class="btn btn-full" id="register-button">Login</a>
+                            </div>
+                        </form>
+                        <div class="border-top pt-3">
+                          <br>
+                            <small class="text-muted">
+                                <p>Need An Account ? <a class="ml-2" href="{% url 'users-register' %}">Sign Up Now</a><br></p>
+                                <p><br>Forgot password ? <a class="ml-2" href="{% url 'password_reset' %}">Reset password</a></p>
+                            </small>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+            </div>
+{% endblock %}
