@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Post,Places,Book
+from .models import Post, Places, Book
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from users.models import comment
@@ -13,11 +13,14 @@ from django.views.generic import (
     DeleteView
 )
 
+
 def home(request):
     return render(request, 'blog/no-auth.html')
 
+
 def about(request):
     return render(request, 'blog/about.html', {'title': 'About'})
+
 
 @login_required
 def user_auth(request):
@@ -29,6 +32,7 @@ def user_auth(request):
     }
     return render(request, 'blog/auth.html', context)
 
+
 @login_required
 def user_admin(request):
     context = {
@@ -38,10 +42,12 @@ def user_admin(request):
     }
     return render(request, 'blog/admin.html', context)
 
+
 class PostListView(ListView):
     model = Places
     template_name = 'blog/admin.html'  # <app>/<model>_<viewtype>.html
     context_object_name = 'places'
+
 
 class PostDetailView(DetailView):
     model = Places
@@ -49,30 +55,32 @@ class PostDetailView(DetailView):
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Places
-    fields = ['id','name','price','per','adv1','adv2','adv3','adv4','amount']
+    fields = ['id', 'name', 'price', 'per',
+              'adv1', 'adv2', 'adv3', 'adv4', 'amount']
 
     def form_valid(self, form):
         return super().form_valid(form)
 
 
-
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Places
-    fields = ['id','name','price','per','adv1','adv2','adv3','adv4','amount']
+    fields = ['id', 'name', 'price', 'per',
+              'adv1', 'adv2', 'adv3', 'adv4', 'amount']
 
     def form_valid(self, form):
         return super().form_valid(form)
 
     def test_func(self):
-        place= self.get_object()
+        place = self.get_object()
         return True
+
 
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Places
     success_url = '/home'
 
     def test_func(self):
-        place= self.get_object()
+        place = self.get_object()
         return True
 
 # class PostDeleteView1(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
