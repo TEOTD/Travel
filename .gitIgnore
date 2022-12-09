@@ -1,0 +1,9 @@
+venv
+venv/*
+venv/*/**
+
+### IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
